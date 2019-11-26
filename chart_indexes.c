@@ -4,27 +4,31 @@
 
 const int COUNT = 4;
 
-void chart(int score);
+void chart(int count, int scores[]);
 
 int main(void) 
 {
-    int score[COUNT];
-    for(int i = 0; i < COUNT; i++)
+    int scores[COUNT];
+    for (int i = 0; i < COUNT; i++)
     {
-        score[i] = get_int("Score %i:", i + 1);
+        scores[i] = get_int("Score %i:", i + 1);
     }
-    for(int j = 0; j < COUNT; j++)
-    {
-        printf("Score %i: ", j + 1);
-        chart(score[j]);
-        printf("\n");
-    }
+    
+    chart(COUNT, scores);
 }
 
-void chart(int score)
+void chart(int count, int scores[])
 {
-    for(int i=0; i < score; i++)
+    // iterate over how many bars there will be
+    for (int i = 0; i < COUNT; i++)
     {
-        printf("#");
+        //printing the bars
+        printf("Score %i: ", i + 1);
+        for (int j = 0; j < scores[i]; j++)
+        {
+            printf("#");
+        }
+        printf("\n");
     }
+
 }
