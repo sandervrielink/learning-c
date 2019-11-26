@@ -8,19 +8,34 @@ int main(int argc, string argv[])
     int k_int = atoi(argv[1]);
     if (argc == 2 && k_int != 0) 
     {
-        string k_string = argv[1];
-
-        printf("\n %i \n", k_int);
-        string plaintext = get_string("plaintext: \n");
+        string plaintext = get_string("plaintext: ");
         printf("ciphertext: ");
-        string cyphertext = "";
-        for (int i = 0, s = strlen(plaintext); i < s; i++) {
+        // Loop through characters of input plaintet
+        for (int i = 0, s = strlen(plaintext); i < s; i++) 
+        {
+            int letter = 0;
             int letter1 = plaintext[i];
-            if (letter1 >= 65 && letter1 <= 115)
+            // is it a capital letter?
+            if (letter1 >= 65 && letter1 <= 90)
             {
-                int letter = letter1 + k_int;
+                letter = letter1 + k_int;
+                if (letter > 90) 
+                {
+                    letter = letter - 26;
+                }
                 printf("%c", letter);         
             }
+            // is it a lower letter?
+            else if (letter1 >= 97)
+            {
+                letter = letter1 + k_int;
+                if (letter >= 123) 
+                {
+                    letter = letter - 26;
+                }
+                printf("%c", letter);         
+            }
+            // other characters
             else
             {
                 printf("%c", letter1);
