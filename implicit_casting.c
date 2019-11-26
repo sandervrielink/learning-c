@@ -10,6 +10,7 @@ int main(void)
     for (int i = 0, total = strlen(name); i < total; i++)
     {
         // implicit castint the character to an integer, the computers knows it already
+        // do casting via automatically datatypes
         printf("%c: %i \n", name[i], name[i]);
     }
 }
