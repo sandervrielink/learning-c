@@ -4,7 +4,7 @@
 #include <string.h>
 
 // Declaring the function, otherwise c doesn't know the function exists
-// char * --> thats the pointer to the memory location
+// char * --> stores the address of the memory location --> (pointer)
 // This is only by strings (char *)
 // a memory location ends with \0
 bool compare(char *a, char *b);
