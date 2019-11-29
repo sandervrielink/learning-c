@@ -4,7 +4,7 @@
 #include <string.h>
 
 // Declaring the function, otherwise c doesn't know the function exists
-// char * --> stores the address of the memory location --> (pointer)
+// char * --> stores the address of first byte in the memory location --> (pointer)
 // This is only by strings (char *)
 // a memory location ends with \0
 bool compare(char *a, char *b);
@@ -12,6 +12,7 @@ bool compare(char *a, char *b);
 int main(void)
 {
     char *input1 = get_string("First string: ");
+    // same as: if (input == NULL)
     if (!input1)
     {
         return 1;
